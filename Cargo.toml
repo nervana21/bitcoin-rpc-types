@@ -1,0 +1,15 @@
+[package]
+name = "bitcoin-rpc-types"
+version = "0.1.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/nervana21/bitcoin-rpc-types"
+description = "Bitcoin RPC type definitions for Core's JSON-RPC schema"
+keywords = ["bitcoin", "rpc", "types", "codegen", "fuzzing"]
+categories = ["cryptography", "data-structures", "api-bindings"]
+readme = "README.md"
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+thiserror = "2.0.16"
+serde_json = "1.0.140"
