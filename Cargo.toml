@@ -4,10 +4,11 @@ version = "0.1.1"
 edition = "2021"
 license = "MIT OR Apache-2.0"
 repository = "https://github.com/nervana21/bitcoin-rpc-types"
-description = "Bitcoin RPC type definitions for Core's JSON-RPC schema"
+description = "Type definitions for Bitcoin Core's JSON-RPC interface"
 keywords = ["bitcoin", "rpc", "types", "codegen", "fuzzing"]
 categories = ["cryptography", "data-structures", "api-bindings"]
 readme = "README.md"
+documentation = "https://docs.rs/bitcoin-rpc-types"
 
 [dependencies]
 serde = { version = "1.0", features = ["derive"] }

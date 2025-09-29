@@ -1,6 +1,6 @@
 # bitcoin-rpc-types
 
-Shared Bitcoin RPC type definitions.
+Type definitions for Bitcoin Core's JSON-RPC interface, designed for use in code generation and fuzzing frameworks.
 
 ## Usage
 
@@ -14,7 +14,7 @@ bitcoin-rpc-types = "0.1.0"
 ## Example
 
 ```rust
-use bitcoin_rpc_types::{ApiDefinition, BtcMethod, BtcArgument, BtcResult};
+use bitcoin_rpc_types::{ApiDefinition, BtcMethod, BtcArgument, BtcResult, HashOrHeight};
 
 // Load an API definition from JSON
 let api_def: ApiDefinition = serde_json::from_str(json_data)?;
@@ -37,5 +37,5 @@ Contributions warmly welcome.
 MIT OR Apache-2.0
 
 ## Related Projects
-This crate is used in the Bitcoin RPC Codegen project, which generates type-safe Rust clients for Bitcoin Core's JSON-RPC API. 
-For more information, see the main [bitcoin-rpc-codegen](https://github.com/nervana21/bitcoin-rpc-codegen) repository.
+
+Part of the **bitcoin-rpc-\*** ecosystem, which provides type-safe Rust for seamless, interface-level testing and development.
