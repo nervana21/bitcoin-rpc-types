@@ -11,6 +11,8 @@
 //! - `BtcResult` - Method result specification
 //! - `ApiDefinition` - Complete API definition container
 
+pub mod hash_or_height;
 pub mod types;
 
+pub use hash_or_height::HashOrHeight;
 pub use types::{ApiDefinition, BtcArgument, BtcMethod, BtcResult, Result, SchemaError};

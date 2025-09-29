@@ -11,6 +11,7 @@ readme = "README.md"
 documentation = "https://docs.rs/bitcoin-rpc-types"
 
 [dependencies]
+bitcoin = { version = "0.32.7", default-features = false, features = ["serde"] }
 serde = { version = "1.0", features = ["derive"] }
-thiserror = "2.0.17"
 serde_json = "1.0.140"
+thiserror = "2.0.17"
