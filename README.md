@@ -8,7 +8,7 @@ Add this to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-bitcoin-rpc-types = "0.1.0"
+bitcoin-rpc-types = "0.1.2"
 ```
 
 ## Example
