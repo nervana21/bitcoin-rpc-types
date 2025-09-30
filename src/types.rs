@@ -44,9 +44,6 @@ pub struct BtcResult {
     /// Whether the result is optional
     #[serde(default, rename = "optional")]
     pub optional: bool,
-    /// Whether the result is required (computed from optional)
-    #[serde(skip)]
-    pub required: bool,
     /// Description of the result
     pub description: String,
     /// Whether to skip type checking for this result
@@ -69,7 +66,6 @@ impl Default for BtcResult {
         Self {
             type_: String::new(),
             optional: false,
-            required: true,
             description: String::new(),
             skip_type_check: false,
             key_name: String::new(),
@@ -90,25 +86,11 @@ impl BtcResult {
         condition: String,
         inner: Vec<BtcResult>,
     ) -> Self {
-        Self {
-            type_,
-            optional,
-            required: !optional,
-            description,
-            skip_type_check,
-            key_name,
-            condition,
-            inner,
-        }
+        Self { type_, optional, description, skip_type_check, key_name, condition, inner }
     }
 
-    /// Post-processes the result to update required field based on optional
-    pub fn post_process(&mut self) {
-        self.required = !self.optional;
-        for inner in &mut self.inner {
-            inner.post_process();
-        }
-    }
+    /// Returns whether the result is required (computed from optional)
+    pub fn required(&self) -> bool { !self.optional }
 }
 
 /// Bitcoin method definition
@@ -144,12 +126,7 @@ impl ApiDefinition {
     /// Loads an API definition from a JSON file
     pub fn from_file<P: AsRef<Path>>(path: P) -> Result<Self> {
         let content = std::fs::read_to_string(path)?;
-        let mut api_def: ApiDefinition = serde_json::from_str(&content)?;
-        for method in api_def.rpcs.values_mut() {
-            for result in &mut method.results {
-                result.post_process();
-            }
-        }
+        let api_def: ApiDefinition = serde_json::from_str(&content)?;
         Ok(api_def)
     }
 
