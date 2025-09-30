@@ -1,6 +1,10 @@
 # bitcoin-rpc-types
 
-Type definitions for Bitcoin Core's JSON-RPC interface, designed for use in code generation and fuzzing frameworks.
+[![License: MIT OR Apache-2.0](https://img.shields.io/badge/license-MIT%20OR%20Apache--2.0-blue)](LICENSE)
+[![Docs.rs](https://img.shields.io/docsrs/bitcoin-rpc-types)](https://docs.rs/bitcoin-rpc-types)
+[![crates.io](https://img.shields.io/crates/v/bitcoin-rpc-types)](https://crates.io/crates/bitcoin-rpc-types)
+
+Type definitions for Bitcoin Core's JSON-RPC interface.
 
 ## Usage
 
@@ -28,14 +32,10 @@ for method in api_def.methods.values() {
 }
 ```
 
-## Contributing
-
-Contributions warmly welcome.
-
 ## License
 
 MIT OR Apache-2.0
 
 ## Related Projects
 
-Part of the **bitcoin-rpc-\*** ecosystem, which provides type-safe Rust for seamless, interface-level testing and development.
+Part of the bitcoin-rpc crate ecosystem, providing type-safe Rust primitives for testing and development at the Bitcoin Core JSON-RPC interface.
