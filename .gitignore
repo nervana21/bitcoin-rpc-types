@@ -1,3 +1,6 @@
 # Rust build artifacts
 target/
 **/target/
+
+# Mutant testing
+mutants.out/
