@@ -2,8 +2,9 @@
 //! Shared Bitcoin RPC type definitions
 //!
 //! This crate provides the core types and utilities for working with the
-//! Bitcoin Core JSON-RPC API. It serves as a shared foundation that can be
-//! used by both the codegen system and external consumers like fuzzing tools.
+//! Bitcoin Core JSON-RPC API. It serves as the shared foundation for the
+//! `bitcoin-rpc-*` ecosystem and is intended to be used by all consumers
+//! of the interface.
 //!
 //! ## Core Types
 //! - `BtcMethod` - Complete Bitcoin method definition
